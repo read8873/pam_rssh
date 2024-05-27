@@ -17,8 +17,8 @@ jobs:
     steps:
     - name: Install Packages
       run: |
-        sudo apt-get update
-        sudo apt-get install libpam0g-dev libssl-dev
+        sudo apt-get update  -y
+        sudo apt-get install  -y libpam0g-dev libssl-dev
     - uses: actions/checkout@v2
       with:
         submodules: recursive
@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: build
-        path: target/
+        path: target/release/libpam_rssh.so
