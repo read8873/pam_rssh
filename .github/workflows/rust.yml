@@ -10,7 +10,8 @@ env:
 
 jobs:
   build:
-
+    strategy:
+      fail-fast: false
     runs-on: ubuntu-24.04
     env:
       SSH_AUTH_SOCK: /tmp/ssh-agent.sock
