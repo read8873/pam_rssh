@@ -16,12 +16,12 @@ jobs:
     env:
       SSH_AUTH_SOCK: /tmp/ssh-agent.sock
       DEBIAN_FRONTEND: noninteractive
-      NEEDRESTART_MODE: l
+      
     steps:
     - name: Install Packages
       run: |
         sudo -E apt-get update  -y
-        sudo -E apt-get install  -y libpam0g-dev libssl-dev
+        sudo NEEDRESTART_MODE=l apt-get install  -y libpam0g-dev libssl-dev
     - uses: actions/checkout@v2
       with:
         submodules: recursive
