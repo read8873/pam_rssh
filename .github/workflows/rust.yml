@@ -21,7 +21,7 @@ jobs:
     - name: Install Packages
       run: |
         sudo -E apt-get update  -y
-        sudo NEEDRESTART_MODE=l apt-get install  -y libpam0g-dev libssl-dev
+        sudo NEEDRESTART_SUSPEND=1 apt-get install  -y libpam0g-dev libssl-dev
     - uses: actions/checkout@v2
       with:
         submodules: recursive
