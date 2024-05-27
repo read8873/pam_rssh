@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       SSH_AUTH_SOCK: /tmp/ssh-agent.sock
+      DEBIAN_FRONTEND: noninteractive
+      NEEDRESTART_MODE: l
     steps:
     - name: Install Packages
       run: |
